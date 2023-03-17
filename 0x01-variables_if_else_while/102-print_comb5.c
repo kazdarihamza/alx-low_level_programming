@@ -7,26 +7,27 @@
 
 int main(void)
 {
-	int n, m, o, p;
+	int a = 0;
+	int b;
 
-	for (n = 0; n <= 9; n++)
+	while (a <= 99)
 	{
-		for (m = 0; m <= 9; m++)
+		b = a + 1;
+		while (b <= 99)
 		{
-			for (o = 0; o <= 9; o++)
+			putchar(a / 10 + '0');
+			putchar(a % 10 + '0');
+			putchar(' ');
+			putchar(b / 10 + '0');
+			putchar(b % 10 + '0');
+			if (a != 98)
 			{
-				for (p = 0; p <= 9; p++)
-				{
-					putchar(n + '0');
-					putchar(m + '0');
-					putchar(' ');
-					putchar(o + '0');
-					putchar(p + '0');
-					putchar(',');
-					putchar(' ');
-				}
+				putchar(',');
+				putchar(' ');
 			}
+			b++;
 		}
+		a++;
 	}
 	putchar('\n');
 	return (0);
