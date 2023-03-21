@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include "main.h"
 /**
- *add - add two integers
- *@x: integer argument
- *@y: integer argument
- *Return: sum
+ * print_to_98 - print numbers n to 98
+ * @n: integer argument
  */
 
 void print_to_98(int n)
@@ -25,4 +23,4 @@ void print_to_98(int n)
 		printf("%d", n);
 
 	printf("\n");
-}	
+}
