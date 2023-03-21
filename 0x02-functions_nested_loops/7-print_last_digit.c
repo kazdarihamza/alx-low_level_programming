@@ -9,6 +9,13 @@ int print_last_digit(int x)
 {
 	int last_digit;
 
+	
+	if (x == INT_MIN)
+	{
+		last_digit = 8;
+		_putchar(last_digit + '0');
+		return (last_digit);
+	}
 	if (x >= 0)
 	{
 		_putchar(x % 10 + '0');
@@ -19,12 +26,6 @@ int print_last_digit(int x)
 		x = x * -1;
 		_putchar(x % 10 + '0');
 		return (x % 10);
-	}
-	else if (x == INT_MIN)
-	{
-		last_digit = 8;
-		_putchar(last_digit + '0');
-		return (last_digit);
 	}
 	return (0);
 }
