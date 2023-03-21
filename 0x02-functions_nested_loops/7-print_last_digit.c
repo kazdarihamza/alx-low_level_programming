@@ -8,7 +8,6 @@
 int print_last_digit(int x)
 {
 	int last_digit;
-
 	
 	if (x == INT_MIN)
 	{
