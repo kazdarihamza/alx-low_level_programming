@@ -1,8 +1,6 @@
 #include "main.h"
 /**
- *print_last_digit - function that gives the last digit of a number.
- *@x: is a character from ascii
- *Return: always 0 (sucess)
+ *jack_bauer - function that generates minutes of jack bauer.
  */
 
 void jack_bauer(void)
