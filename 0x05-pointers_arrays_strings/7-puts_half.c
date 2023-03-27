@@ -1,40 +1,32 @@
 #include "main.h"
-/**
- * _strlen - prints string lentgh
- * @str: string to modify
- * Return: retrunf the lentgh of string
- */
-
-int _strlen(char *str);
 
 /**
- * puts_half - prints half string
- * @str: string to modify
+ * puts_half - Prints half of a string.
+ * @str: The string to be printed.
+ *
+ * Return: void.
  */
-
 void puts_half(char *str)
 {
-	int n;
+	int i, j, len;
 
-	for (n = _strlen(str) / 2; n < _strlen(str); n++)
+	for (len = 0; str[len] != '\0'; len++)
 	{
-		_putchar(str[n]);
 	}
+
+	if (len % 2 == 0)
+	{
+		i = len / 2;
+	}
+	else
+	{
+		i = (len - 1) / 2;
+	}
+
+	for (j = i; str[j] != '\0'; j++)
+	{
+		_putchar(str[j]);
+	}
+
 	_putchar('\n');
 }
-/**
- * _strlen - prints string lentgh
- * @str: string to modify
- * Return: retrunf the lentgh of string
- */
-int _strlen(char *str)
-{
-	int i = 0;
-
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
