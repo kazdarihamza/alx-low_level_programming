@@ -1,6 +1,9 @@
 #include "main.h"
-/*
- *
+/**
+ * _strspn - gets the length of a prefix substring
+ * @s: pointer to the first character in the string
+ * @accept: the string that we'll compare s to
+ * Return: returns the length
  */
 
 unsigned int _strspn(char *s, char *accept)
