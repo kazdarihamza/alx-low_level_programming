@@ -1,6 +1,9 @@
 #include "main.h"
 /**
- *
+ * _strstr - locates a substring
+ * @haystack: pointer to the first char in the string
+ * @needle: pointer to the first char in the string
+ * Return: returns the string
  */
 char *_strstr(char *haystack, char *needle)
 {
@@ -10,7 +13,6 @@ char *_strstr(char *haystack, char *needle)
 	{
 		p1 = haystack;
 		p2 = needle;
-		
 		while (*p1 == *p2 && *p2 != '\0')
 		{
 			p1++;
