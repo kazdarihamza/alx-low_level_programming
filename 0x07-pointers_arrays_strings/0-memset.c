@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * _memset - fills memory with a constant byte
- * @s: the string to be filled
- * @b: the constant byte
+ * @s: the pointer to the start of memory block to be filled
+ * @b: the constant byte to write to each byte of memory
  * @n: number of bytes to be filled
  * Return: the string
  */
