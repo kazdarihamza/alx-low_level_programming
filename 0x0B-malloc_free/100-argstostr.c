@@ -1,6 +1,23 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+
+/**
+ * _strlen - returns the length of a string.
+ * @s: string
+ * Return: length
+ */
+
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*s != '\0')
+		len++, s++;
+
+	return (len);
+}
+
 /**
  * argstostr - concatonates all the args of the programs
  *@ac: arg count
@@ -17,13 +34,12 @@ char *argstostr(int ac, char **av)
 
 	for (n = 0; n < ac; n++)
 	{
-		for (m = 0; av[n][m] != '\0'; m++)
-			size++;
-		size++;
+		size += _strlen(av[n]);
 	}
-	size++;
+	size += (ac + 1);
 
 	str = malloc(size * sizeof(char));
+
 	if (str == NULL)
 	{
 		free(str);
