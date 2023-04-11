@@ -2,7 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- *
+ *_strlen - prints the length of a char
+ *@s: str to measure
+ *Return: returns the length of the str
  */
 int _strlen(char *s)
 {
@@ -15,7 +17,10 @@ int _strlen(char *s)
 	return (i);
 }
 /**
- *
+ *_strdup - returns a pointer to a newly allocated space in memory
+ *which contains a copy of the string given as a parameter
+ *@str: string to copy
+ *Return: a pointer to the new str
  */
 char *_strdup(char *str)
 {
@@ -34,7 +39,7 @@ char *_strdup(char *str)
 	{
 		if (nstr == NULL)
 			return (NULL);
-			
+
 		nstr[n] = str[n];
 		n++;
 	}
