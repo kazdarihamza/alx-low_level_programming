@@ -50,12 +50,9 @@ char *argstostr(int ac, char **av)
 	{
 		for (m = 0; av[n][m] != '\0'; m++)
 		{
-			str[l] = av[n][m];
-			l++;
+			str[l++] = av[n][m];
 		}
-		str[l] = '\n';
-		l++;
+		str[l++] = '\n';
 	}
-	str[l] = '\0';
 	return (str);
 }
