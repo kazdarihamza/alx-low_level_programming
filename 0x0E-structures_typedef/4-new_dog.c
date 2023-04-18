@@ -25,16 +25,15 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (name == 0 || owner == 0)
 	{
-		free(name);
-		free(owner);
+		free((*d).name);
+		free((*d).owner);
+		free(d);
 		return (0);
 	}
-	for (i = 0; i < strlen(name); i++)
+	for (i = 0; i <= strlen(name) + 1; i++)
 		(*d).name[i] = *(name + i);
-	(*d).name[i] = "\0";
-	for (j = 0; j < strlen(owner); j++)
+	for (j = 0; j <= strlen(owner) + 1; j++)
 		(*d).owner[j] = *(owner + j);
-	(*d).owner[j] = "\0";
 	(*d).age = age;
 	return (d);
 }
