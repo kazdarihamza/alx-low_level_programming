@@ -20,6 +20,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(d);
 		return (0);
 	}
+	for (i = 0; i <= strlen(name) + 1; i++)
+		;
+	for (j = 0; j <= strlen(owner) + 1; j++)
+		;
+
 	(*d).name = malloc(strlen(name) + 1);
 	(*d).owner = malloc(strlen(owner) + 1);
 
