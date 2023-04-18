@@ -20,12 +20,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(d);
 		return (0);
 	}
-	for (i = 0; i <= strlen(name) + 1; i++)
-		;
-	for (j = 0; j <= strlen(owner) + 1; j++)
-		;
-	(*d).name = malloc(i);
-	(*d).owner = malloc(j);
+	(*d).name = malloc(strlen(name) + 1);
+	(*d).owner = malloc(strlen(owner) + 1);
 
 	if (name == 0 || owner == 0)
 	{
@@ -33,10 +29,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(owner);
 		return (0);
 	}
-	for (i = 0; i <= strlen(name) + 1; i++)
+	for (i = 0; i < strlen(name); i++)
 		(*d).name[i] = *(name + i);
-	for (j = 0; j <= strlen(owner) + 1; j++)
+	(*d).name[i] = "\0";
+	for (j = 0; j < strlen(owner); j++)
 		(*d).owner[j] = *(owner + j);
+	(*d).owner[j] = "\0";
 	(*d).age = age;
 	return (d);
 }
