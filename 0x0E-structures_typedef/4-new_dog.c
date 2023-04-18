@@ -12,34 +12,37 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d;
-	unsigned long int i, j;
+	int i = 0, len_name, len_owner;
 
-	d = malloc(sizeof(dog_t));
-	if (d == 0 || owner == 0 || name == 0)
+	d = malloc(sizeof(struct dog));
+	if (d == 0 || !(name) || !(owner))
 	{
 		free(d);
 		return (0);
 	}
-	for (i = 0; name[i] != '\0'; i++)
-		;
-	for (j = 0; owner[j] != '\0'; j++)
-		;
-
-	(*d).name = malloc(i + 1);
-	(*d).owner = malloc(j + 1);
-
-	if ((*d).name == 0 || (*d).owner == 0)
+	while (*(name + i))
+		i++;
+	len_name = i;
+	i = 0;
+	while (*(owner + i))
+		i++;
+	len_owner = i;
+	(*d).name = malloc(len_name + 1);
+	(*d).owner = malloc(len_owner + 1);
+	if (!((*d).name) || !((*d).owner))
 	{
+		free(d);
 		free((*d).name);
 		free((*d).owner);
-		free(d);
 		return (0);
 	}
-	
-	for (i = 0; i <= strlen(name) + 1; i++)
-		(*d).name[i] = *(name + i);
-	for (j = 0; j <= strlen(owner) + 1; j++)
-		(*d).owner[j] = *(owner + j);
+	for (i = 0; i < len_name; i++)
+		(*d).name[i] = name[i];
+	(*d).name[i] = 0;
 	(*d).age = age;
+	for (i = 0; i < len_owner; i++)
+		(*d).owner[i] = owner[i];
+	(*d).owner[i] = 0;
 	return (d);
+
 }
