@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
-*print_list - adds a new noe at the beginnigng of a list
+*add_node - adds a new noe at the beginnigng of a list
 *@head: pointer to beginning of a list
 *@str: value of the node to add
 @Return: the address of the new element
@@ -24,7 +24,7 @@ list_t *add_node(list_t **head, const char *str)
 
 	new->str = newstr;
 	new->len = strlen(str);
-	new->next = *head; 
+	new->next = *head;
 
 	*head = new;
 
