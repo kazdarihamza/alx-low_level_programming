@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
-*free_list - frees a list
+*free_listint2 - frees a list
 *@head: pointer to the first node
 */
 
