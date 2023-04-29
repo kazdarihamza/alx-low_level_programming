@@ -8,23 +8,15 @@
 
 size_t print_listint(const listint_t *h)
 {
-	int count = 0;
+	const listint_t *placement = h;
+	size_t count = 0;
 
-	while (h->next != NULL)
+	while (placement != NULL)
 	{
-		if (h->n == 0)
-		{
-			printf("(null)");
-			count++;
-		}
-		else
-		{
-			printf("%d\n", h->n);
-			h = h->next;
-			count++;
-		}
+		printf("%d\n", placement->n);
+		count++;
+		placement = placement->next;
 	}
-	printf("%d\n", h->n);
-	count++;
+
 	return (count);
 }
