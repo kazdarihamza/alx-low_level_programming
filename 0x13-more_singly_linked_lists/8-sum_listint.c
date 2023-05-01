@@ -1,10 +1,9 @@
 #include "lists.h"
 
 /**
-*get_nodeint_at_index - returns the nth node of a list
+*sum_listint - returns the sum of all the data in a list
 *@head: pointer to the first node
-*@index: the position of the node
-*Return: the nth node
+*Return: the sum
 */
 
 int sum_listint(listint_t *head)
@@ -19,5 +18,5 @@ int sum_listint(listint_t *head)
 		sum += head->n;
 		head = head->next;
 	}
-	return (sum);	
+	return (sum);
 }
