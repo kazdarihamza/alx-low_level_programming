@@ -4,7 +4,7 @@ size_t listint_len(const listint_t *h);
 
 /**
 *delete_nodeint_at_index - deletes a node at given position
-*@idx: position
+*@index: position
 *@head: pointer to the first node
 *Return: 1 if success -1 otherwise
 */
@@ -33,9 +33,9 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 			free(deleted_node);
 			return (1);
 		}
-		else if ((i + 1) ==index)
+		else if ((i + 1) == index)
 			previous_node = *head;
-		head= &((*head)->next);
+		head = &((*head)->next);
 		i++;
 	}
 	return (-1);
