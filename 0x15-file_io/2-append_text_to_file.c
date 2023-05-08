@@ -24,7 +24,7 @@ int _strlen(char *str)
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd;
+	int fd, w;
 
 	fd = open(filename, O_WRONLY | O_APPEND);
 
@@ -37,7 +37,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (1);
 	}
 
-	write(fd, text_content, _strlen(text_content));
+	w = write(fd, text_content, _strlen(text_content));
 	if (w == -1 || w != _strlen(text_content))
 	{
 		close(fd);
